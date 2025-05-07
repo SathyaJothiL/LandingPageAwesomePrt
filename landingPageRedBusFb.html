@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      <a href="#" id="smartlink">Click for deep linking to awesome prt app</a>
+    </h1>
+
+    <script>
+      const smartLink = document.getElementById("smartlink");
+      smartLink.addEventListener("click", (event) => {
+        event.preventDefault()
+        const deepLink = "awesomeprt://app/h2";
+        const falllbackLink =
+          "https://play.google.com/store/apps/details?id=in.redbus.android";
+
+        window.location = deepLink;
+        setTimeout(() => {
+          window.location = falllbackLink;
+        }, 5000);
+      });
+    </script>
+  </body>
+</html>
